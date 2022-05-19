@@ -1,0 +1,6 @@
+.inputAsButton {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-template-rows: 15px;
+    width: fit-content;
+}
