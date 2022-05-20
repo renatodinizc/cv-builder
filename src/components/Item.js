@@ -11,9 +11,14 @@ function Item(props) {
 
     function handleItemSubmission(event) {
         event.preventDefault();
-        props.editItemTitle(title);
-        setEditing(false);
-    }
+        if (title.trim()) {
+            setTitle(title);
+            setEditing(false);
+        } else {
+            setTitle(props.title);
+            setEditing(false);
+        };
+    };
 
     if (isEditing == false) {
         return (
