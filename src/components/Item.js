@@ -3,28 +3,27 @@ import './item.css';
 
 function Item(props) {
     const [isEditing, setEditing] = useState(false);
-    const [newTitle, setNewTitle] = useState('');
+    const [title, setTitle] = useState(props.title);
 
-    function handleNewTitle(event) {
-        setNewTitle(event.target.value);
+    function handleTitle(event) {
+       setTitle(event.target.value);
     };
 
     function handleItemSubmission(event) {
         event.preventDefault();
-        props.editItemTitle(newTitle);
-        setNewTitle('');
+        props.editItemTitle(title);
         setEditing(false);
     }
 
     if (isEditing == false) {
         return (
-            <p className='inputAsButton' onClick={() => setEditing(true)}> {props.title} </p>
+            <props.tag onClick={() => setEditing(true)}> {title} </props.tag>
         );
     };
 
     return (
-        <form className='inputAsButton' onSubmit={handleItemSubmission}>
-            <input type='text' value={newTitle} onChange={handleNewTitle} placeholder={props.title} autoComplete='off' />
+        <form onSubmit={handleItemSubmission}>
+            <input type='text' value={title} onChange={handleTitle} placeholder={props.title} autoComplete='off' />
         </form>
     );
 ;}
