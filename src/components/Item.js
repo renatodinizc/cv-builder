@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import './item.css';
 
 function Item(props) {
     const [isEditing, setEditing] = useState(false);
-    const [title, setTitle] = useState(props.title);
+    const [title, setTitle] = useState(props.defaultValue);
 
     function handleTitle(event) {
        setTitle(event.target.value);
@@ -15,20 +14,20 @@ function Item(props) {
             setTitle(title);
             setEditing(false);
         } else {
-            setTitle(props.title);
+            setTitle(props.defaultValue);
             setEditing(false);
         };
     };
 
     if (isEditing == false) {
         return (
-            <props.tag onClick={() => setEditing(true)}> {title} </props.tag>
+            <props.tag className={props.defaultValue.replace(/\s/g, '')} onClick={() => setEditing(true)}> {title} </props.tag>
         );
     };
 
     return (
-        <form onSubmit={handleItemSubmission}>
-            <input type='text' value={title} onChange={handleTitle} placeholder={props.title} autoComplete='off' />
+        <form className={props.defaultValue.replace(/\s/g, '')}  onSubmit={handleItemSubmission}>
+            <input type='text' value={title} onChange={handleTitle} placeholder={props.defaultValue} autoComplete='off' />
         </form>
     );
 ;}
