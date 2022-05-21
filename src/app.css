@@ -24,7 +24,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
-    width: 700px;
+    width: 60%;
     padding: 1% 0%;
     align-items: center;
     margin-top: 1%;
