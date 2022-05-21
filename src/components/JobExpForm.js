@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function ProfExpForm(props) {
+function JobExpForm(props) {
     const [jobExp, setJobExp] = useState({
                                           id: '',
                                           title: '',
@@ -46,4 +46,4 @@ function ProfExpForm(props) {
     );
 };
 
-export default ProfExpForm;
+export default JobExpForm;

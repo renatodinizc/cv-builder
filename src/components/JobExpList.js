@@ -1,9 +1,9 @@
 import './professional-exp.css';
 import React, { useState } from 'react';
-import ProfExpForm from './ProfExpForm';
-import ProfExpItem from './ProfExpItem';
+import JobExpForm from './JobExpForm';
+import JobExpItem from './JobExpItem';
 
-function ProfExpList() {
+function JobExpList() {
     const [isEditing, setEditing] = useState(false);
     const [jobExps, setJobExps] = useState([]);
 
@@ -37,7 +37,7 @@ function ProfExpList() {
             <>
                 {jobExps.map(jobExp => 
                             <div className={'JobExp '+ jobExp.id}>
-                                <ProfExpItem id={jobExp.id} 
+                                <JobExpItem id={jobExp.id} 
                                             title={jobExp.title} 
                                             company={jobExp.company} 
                                             startDate={jobExp.startDate}
@@ -52,9 +52,9 @@ function ProfExpList() {
         );
     } else {
         return (
-            <ProfExpForm createJobExp={createJobExp} id={jobExps.length + 1} cancelNew={cancelNew}/>
+            <JobExpForm createJobExp={createJobExp} id={jobExps.length + 1} cancelNew={cancelNew}/>
         );
     };
 };
 
-export default ProfExpList;
+export default JobExpList;

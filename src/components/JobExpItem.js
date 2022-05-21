@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ProfExpItem(props) {
+function JobExpItem(props) {
     const [isEditing, setEditing] = useState(false);
     const [editedJobExp, setEditedJobExp] = useState({
                                                      id: props.id,
@@ -60,4 +60,4 @@ function ProfExpItem(props) {
     };
 };
 
-export default ProfExpItem;
+export default JobExpItem;
