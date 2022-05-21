@@ -23,13 +23,13 @@ function Item(props) {
         return (
             <props.tag className={props.defaultValue.replace(/\s/g, '')} onClick={() => setEditing(true)}> {title} </props.tag>
         );
+    } else {
+        return (
+            <form className={props.defaultValue.replace(/\s/g, '')}  onSubmit={handleItemSubmission}>
+                <input type='text' value={title} onChange={handleTitle} placeholder={props.defaultValue} autoComplete='off' />
+            </form>
+        );
     };
-
-    return (
-        <form className={props.defaultValue.replace(/\s/g, '')}  onSubmit={handleItemSubmission}>
-            <input type='text' value={title} onChange={handleTitle} placeholder={props.defaultValue} autoComplete='off' />
-        </form>
-    );
-;}
+}
 
 export default Item;

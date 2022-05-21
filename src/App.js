@@ -1,4 +1,5 @@
 import PersonalInfo from './components/PersonalInfo';
+import ProfessionalExperience from './components/ProfessionalExperience';
 import './app.css';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
     </div>
     <div className='PersonalInfo'>
         <PersonalInfo />
+    </div>
+    <div className='ProfessionalExperience'>
+      <ProfessionalExperience />
     </div>
     </>
   );
