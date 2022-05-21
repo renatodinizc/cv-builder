@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import './professional-exp.css';
 import React, { useState } from 'react';
 import ProfExpForm from './ProfExpForm';
 import ProfExpItem from './ProfExpItem';
@@ -22,12 +22,21 @@ function ProfExpList() {
         setJobExps(editedJobExps);
     };
 
+    function deleteJobExp(id) {
+        const remainingJobExps= jobExps.filter(jobExp => jobExp.id != id);
+        remainingJobExps.map(jobExp => jobExp.id = id);
+        setJobExps(remainingJobExps);
+    };
+
+    function cancelNew() {
+        setEditing(false);
+    };
+
     if (isEditing == false) {
         return (
             <>
-                <ul>
                 {jobExps.map(jobExp => 
-                            <li>
+                            <div className={'JobExp '+ jobExp.id}>
                                 <ProfExpItem id={jobExp.id} 
                                             title={jobExp.title} 
                                             company={jobExp.company} 
@@ -35,15 +44,15 @@ function ProfExpList() {
                                             endDate={jobExp.endDate}
                                             description={jobExp.description}
                                             editJobExp={editJobExp}
+                                            deleteJobExp={deleteJobExp}
                                 />
-                            </li>)}
-                </ul>
-                <button onClick={() => setEditing(true)}>Add new job experience</button>
+                            </div>)}
+                <button className='addJobExp' onClick={() => setEditing(true)}>Add new job experience</button>
             </>
         );
     } else {
         return (
-            <ProfExpForm createJobExp={createJobExp} id={jobExps.length + 1}/>
+            <ProfExpForm createJobExp={createJobExp} id={jobExps.length + 1} cancelNew={cancelNew}/>
         );
     };
 };

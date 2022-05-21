@@ -34,15 +34,15 @@ function ProfExpItem(props) {
 
     if (isEditing == false) {
         return (
-            <ul>
-                <h3>Job Title: {props.title} </h3>
-                <li>Item id: {props.id} </li>
-                <li>Company: {props.company}</li>
-                <li>Start date: {props.startDate}</li>
-                <li>End date: {props.endDate}</li>
-                <li>Description: {props.description}</li>
+            <>
+                <h3>{props.title} </h3>
+                <h4>{props.company}</h4>
+                <p>Start date: {props.startDate}</p>
+                <p>End date: {props.endDate}</p>
+                <p>{props.description}</p>
                 <button onClick={() => setEditing(true)}>Edit experience</button>
-            </ul>
+                <button onClick={() => props.deleteJobExp(props.id)}>Delete</button>
+            </>
 
         );
     } else {
@@ -54,6 +54,7 @@ function ProfExpItem(props) {
                 <input type='date' value={editedJobExp.endDate} name='endDate' onChange={handleEdit}/>
                 <textarea value={editedJobExp.description} name='description' onChange={handleEdit} placeholder='Description of activities' rows={4} cols={24}/>
                 <button type='submit'>Save</button>
+                <button onClick={() => setEditing(false)}>Cancel</button>
             </form>
         );
     };
