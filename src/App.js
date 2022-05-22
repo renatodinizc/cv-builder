@@ -21,7 +21,7 @@ function App() {
     <div className='ProfessionalExperience'>
       <EducationalExperience />
     </div>
-    <div className='ProfessionalExperience'>
+    <div className='SkillSet'>
       <SkillSet />
     </div>
     </>

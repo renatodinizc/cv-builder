@@ -22,11 +22,11 @@ function SkillList() {
     if (isEditing == false) {
         return (
             <>
-                {skills.map(skill => 
-                    <div>
+                <div className='SkillList'>
+                    {skills.map(skill => 
                         <SkillItem id={skill.id} title={skill.title} deleteSkill={deleteSkill} />
-                    </div>
-                )}
+                    )}
+                </div>
                 <button onClick={() => setEditing(true)}>Add new skill</button>
             </>
         );
