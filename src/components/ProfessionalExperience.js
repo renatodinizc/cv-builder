@@ -1,11 +1,11 @@
 import React from 'react';
-import JobExpList from './JobExpList';
+import ExperienceList from './ExperienceList';
 
 function ProfessionalExperience() {
     return (
         <>
             <h2>Professional Experience</h2>
-            <JobExpList />
+            <ExperienceList titlePlaceholder='Job Title' institutionPlaceholder='Company' />
         </>
     );
 };

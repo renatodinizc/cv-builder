@@ -1,5 +1,7 @@
 import PersonalInfo from './components/PersonalInfo';
 import ProfessionalExperience from './components/ProfessionalExperience';
+import EducationalExperience from './components/EducationalExperience';
+import SkillSet from './components/SkillSet';
 import './app.css';
 
 function App() {
@@ -15,6 +17,12 @@ function App() {
     </div>
     <div className='ProfessionalExperience'>
       <ProfessionalExperience />
+    </div>
+    <div className='ProfessionalExperience'>
+      <EducationalExperience />
+    </div>
+    <div className='ProfessionalExperience'>
+      <SkillSet />
     </div>
     </>
   );
